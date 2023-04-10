@@ -1,0 +1,34 @@
+{
+  "devDependencies": {
+    "@cypress/xpath": "^2.0.3",
+    "cypress": "^12.6.0",
+    "cypress-multi-reporters": "^1.6.3",
+    "cypress-xpath": "^2.0.1",
+    "mocha-junit-reporter": "^2.2.0",
+    "mochawesome": "^6.3.1",
+    "mochawesome-merge": "^4.1.0",
+    "mochawesome-report-generator": "^5.1.0"
+  },
+  "name": "cypresauto",
+  "version": "1.0.0",
+  "description": "Cypress Automation",
+  "main": "index.js",
+  "scripts": {
+    "triggerAllTests-headless": "npx cypress run",
+    "triggerAllTests-headed": "npx run --headed",
+    "triggerAllTests-chrome": "npx run --browser chrome",
+    "triggerAllTests-dashboard": "npx run --record --key 44abfb0d-25d3-4de0-9540-a28944ddf581",
+    "triggerAllTests-webdriveruni": "npx run --spec cypress/e2e/integration/webdriver-uni/*",
+    "triggerAllTests-automationTestStore": "npx run --spec cypress/e2e/integration/automation-test-store/*",
+    "junit-merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
+    "delete-junit-report": "rmdir -rf cypress/results/junit/results.xml",
+    "delete-results": "rmdir /S /Q cypress\\results && mkdir cypress\\results",
+    "mochawesome-merge": "npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json",
+    "delete-mochawesome-report": "rmdir -rf mochawesome-report/* || true",
+    "cypress-regression-pack": "npx run delete-results && npx run delete-mochawesome-report && npx run triggerAllTests-headless && npx run mochawesome-merge",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "triggerAllTests-staging": "npx cypress run --env configFile=staging"
+  },
+  "author": "Lausalbra",
+  "license": "ISC"
+}
