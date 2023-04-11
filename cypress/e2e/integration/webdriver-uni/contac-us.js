@@ -7,7 +7,7 @@ describe("Test de contac en la web de webdriverUni",() =>{
         cy.visit("http://webdriveruniversity.com/Contact-Us/contactus.html")
         cy.get('[name="first_name"]').type('Laura')
         cy.get('[name="last_name"]').type('Salgado')
-        cy.get('[name="email"]').type('lau@gmail.com')
+        cy.get('#ContactUsFrm_email').type('lau@gmail.com')
         cy.get('textarea.feedback-input').type('TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT')
         cy.get('[type="submit"]').click({force: true}) 
     });

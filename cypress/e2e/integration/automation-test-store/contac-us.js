@@ -7,7 +7,7 @@ describe("Test de contac en la web de webdriverUni",() =>{
         //cy.xpath('//*[@id="footer"]/footer/section[2]/div/div[1]/div/ul/li[5]/a').click();
         cy.get('#ContactUsFrm_first_name').type('Laura');
        //cy.get('#ContactUsFrm_email').should('have.attr', 'name','email');
-        cy.get('[name="email"]').type('lau@gmail.com');
+       cy.get('#ContactUsFrm_email').type('lau@gmail.com');
         //cy.xpath('//*[@id="ContactUsFrm_email"]').click()
         cy.get('#ContactUsFrm_enquiry').type('TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT');
         cy.get('.col-md-6 > .btn').click();

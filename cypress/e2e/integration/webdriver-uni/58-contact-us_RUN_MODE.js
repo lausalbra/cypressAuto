@@ -13,7 +13,7 @@ describe("Test Contact Us form Automation Test Store", () => {
     }, () => {
       cy.log("Test has completed!")
       cy.visit("https://automationteststore.com/");
-      cy.get("a[href$='contact']555").click().then(function(linkText){
+      cy.get("a[href$='contact']").click().then(function(linkText){
         cy.log('Clicked on text: ' + linkText.text() + ' button.')
       })
       cy.get("@user").then((user) => {
