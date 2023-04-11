@@ -35,7 +35,7 @@ module.exports = defineConfig({
     viewportWidth: 1920,
     reporter: 'cypress-multi-reporters',
     reporterOptions: {
-      configFile: 'reporter-config.json',
+      configFile: 'reporter-config.json'
     },
     reporterEnabled: 'spec, mocha-junit-reporter',
     mochaJunitReporterReporterOptions: {
@@ -43,7 +43,7 @@ module.exports = defineConfig({
     },
      retries: {
       runMode: 0,
-      openMode: 1
+      openMode: 0
     },
     env: {
       first_name: "Laura",
