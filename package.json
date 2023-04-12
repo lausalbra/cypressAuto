@@ -21,6 +21,7 @@
         "triggerAllTests-staging": "npx cypress run --env configFile=staging",
         "cypress-multi-browser": "npm run triggerAllTests-autoTestStore -- --browser electron --headed & npm run triggerAllTests-autoTestStore -- --browser edge --headed"
     },
+    "keywords": [],
     "author": "Lausalbra",
     "license": "ISC",
     "devDependencies": {
