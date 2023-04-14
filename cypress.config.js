@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 const fs = require('fs-extra');
 const path = require('path');
+const cucumber = require('cypress-cucumber-preprocessor').default
 
 function getConfigurationByFile(file) {
   const pathToConfigFile = path.resolve('cypress\\config', `${file}.json`);
@@ -16,9 +17,11 @@ module.exports = defineConfig({
   projectId: '8m4ezu',
   e2e: {
     setupNodeEvents(on, config) {
+      on('file:preprocessor', cucumber())
       const file = config.env.configFile || ''
 
       return getConfigurationByFile(file)
+      
     },
     specPattern: "cypress/e2e/**/*.{js,jsx,ts,tsx,feature}",
     //excludeSpecPattern: "cypress/e2e/other/*.js",

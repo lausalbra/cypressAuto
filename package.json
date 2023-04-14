@@ -27,6 +27,7 @@
     "devDependencies": {
         "@cypress/xpath": "^2.0.3",
         "cypress": "^12.9.0",
+        "cypress-cucumber-preprocessor": "^4.3.1",
         "cypress-multi-reporters": "^1.6.3",
         "cypress-xpath": "^2.0.1",
         "mocha": "^8.0.1",
@@ -37,5 +38,9 @@
     },
     "dependencies": {
         "npx": "^10.2.2"
+    },
+    "cypress-cucumber-preprocessor": {
+      "nonGlobalStepDefinitions": false,
+      "stepDefinitions": "cypress/support/step_definitions"
     }
 }
